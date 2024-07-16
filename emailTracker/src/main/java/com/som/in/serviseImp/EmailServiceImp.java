@@ -105,7 +105,7 @@ public class EmailServiceImp implements EmailService {
 
     private static String getEmailBodyWithTracker(EmailRequest request, String pixelId) {
         String imgUrl = "http://localhost:8086/tracker/"+ pixelId;
-        String formattedContent = String.format("<html><body>%1s<img src="+imgUrl+" width=\"1\" height=\"1\"></body>\n</html>", request.content());
+        String formattedContent = String.format("<html><body>%1s<img src="+imgUrl+" width=\"1\" style=\"display:none\" height=\"1\"></body>\n</html>", request.content()+"<img src=\"https://fastly.picsum.photos/id/14/2500/1667.jpg?hmac=ssQyTcZRRumHXVbQAVlXTx-MGBxm6NHWD3SryQ48G-o\">");
         return formattedContent;
     }
 }
